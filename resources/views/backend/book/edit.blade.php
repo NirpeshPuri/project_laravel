@@ -2,12 +2,12 @@
 @section('title','Edit Book')
 @section('content')
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Student Management</h1>
+    <h1 class="h3 mb-4 text-gray-800">Book Management</h1>
     <div  class="row">
         <div class="col-12">
             <div class="card mb-4">
                 <div class="card-header">
-                    Create Student
+                    Edit Book
                 </div>
                 <div class="card-body">
                     <form action="{{route('backend.book.update')}}" method="post">
@@ -15,38 +15,38 @@
                         <input type="hidden" name="_method" value="PUT">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" value="{{$student->name}}" name="name" class="form-control" placeholder="Enter name">
+                            <input type="text" value="{{$book->name}}" name="name" class="form-control" placeholder="Enter name">
                             @error('name')
                             <span class="text-danger">{{$message}}</span>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="text" value="{{$student->email}}" name="email" class="form-control" placeholder="Enter email">
-                            @error('email')
+                            <label for="author_name">Author</label>
+                            <input type="text" value="{{$book->author_name}}" name="author_name" class="form-control" placeholder="Enter author_name">
+                            @error('author_name')
                                 <span class="text-danger">{{$message}}</span>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="roll_no">Roll No.</label>
-                            <input type="text" value="{{$student->roll}}" name="roll" class="form-control" placeholder="Enter roll_no">
+                            <label for="author_bio">Author Bio</label>
+                            <input type="text" value="{{$book->author_bio}}" name="author_bio" class="form-control" placeholder="Enter author_bio">
                         </div>
                         <div class="form-group">
-                            <label for="address">Address</label>
-                            <input type="text" value="{{$student->address}}" name="address" class="form-control" placeholder="Enter address">
+                            <label for="price">Price</label>
+                            <input type="text" value="{{$book->price}}" name="price" class="form-control" placeholder="Enter price">
                         </div>
                         <div class="form-group">
-                            <label for="temp_address">Address</label>
-                            <input type="text" vaule="value="{{$student->temp_address}}"" name="temp_address" class="form-control" placeholder="Enter temp_address">
+                            <label for="description">Description</label>
+                            <input type="text" value="{{$book->description}}" name="description" class="form-control" placeholder="Enter description">
                         </div>
                         <div class="form-group">
                             <label for="photos">Photos</label>
-                            <input type="text" vaule="value="{{$student->photos}}"" name="photos" class="form-control" placeholder="Upload Photo Max size:2MB">
+                            <input type="text" value="{{$book->file_photo_upload}}" name="file_photo_upload" class="form-control" placeholder="Upload Photo Max size:2MB">
                         </div>
                         <div class="form-group">
-                            <label for="passout_key">Passout Status</label>
-                            <input type="radio" name="passout_key" value="1"> Yes
-                            <input type="radio" name="passout_key" value="0" checked> No
+                            <label for="available_status">Available Status</label>
+                            <input type="radio" name="available_status" value="1"> Yes
+                            <input type="radio" name="available_status" value="0" checked> No
                         </div>
                         
                         <div class="form-group">

@@ -81,6 +81,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Backend\BookController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', [FrontendController::class, 'home']);
 Route::get('/about', [FrontendController::class, 'about']);
@@ -118,6 +119,7 @@ Route::middleware('auth')->group(function () {
     Route::get('backend/book/{id}/edit', [BookController::class, 'edit'])->name('backend.book.edit');
     Route::put('backend/book/{id}/update', [BookController::class, 'update'])->name('backend.book.update');
     Route::delete('backend/book/{id}', [BookController::class, 'destroy'])->name('backend.book.destroy');
+    Route::get('backend/help_user/{id}', [ContactController::class, 'show'])->name('backend.contact.show');
 });
 
 route::get('/user/register', function () {
@@ -127,4 +129,8 @@ Route::post('backend/user/register', [UserController::class, 'register'])->name(
 
 /* Route::post('/upload', 'BookController@store')->name('backend.book.store');
   /*Route::post('/upload', [BookController::class, 'store'])->name('backend.book.store');*/
+
+  Route::get('/contact_us', [ContactController::class, 'showContactForm']);
+Route::post('/contact_us', [ContactController::class, 'submitContactForm']);
+
 

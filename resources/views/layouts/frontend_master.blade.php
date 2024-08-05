@@ -47,7 +47,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-3">
-                <div class="img"><a href="https://www.ektabooks.com"><img src="{{asset('/assets/images/logo.png')}}" style="width: 150px"/></a></div>
+                <div class="img"><a href="{{route('backend.user.dashboard')}}"><img src="{{asset('/assets/images/logo.png')}}" style="width: 150px"/></a></div>
             </div>
             <div class="col-md-8 col-sm-8 tb20p left">
                 <div class="input-group" id="adv-ssearch">
@@ -269,7 +269,7 @@
     </div>
 </section>
 @yield('content')
-<section>
+<!-- <section>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -277,7 +277,7 @@
                     <div class="title_underline"></div>
                 </h2>
                 <div class="carousel testimonialslide slide" id="fade-quote-carousel" data-ride="carousel" data-interval="9000">
-                    <!-- Carousel indicators -->
+                    // Carousel indicators 
                     <ol class="carousel-indicators">
                         <li data-target="#fade-quote-carousel" data-slide-to="0" class=" active"></li>
                         <li data-target="#fade-quote-carousel" data-slide-to="1" class=" "></li>
@@ -299,7 +299,7 @@
                         <li data-target="#fade-quote-carousel" data-slide-to="17" class=" "></li>
                         <li data-target="#fade-quote-carousel" data-slide-to="18" class=" "></li>
                     </ol>
-                    <!-- Carousel items -->
+                    // Carousel items 
                     <div class="carousel-inner">
                         <div class="active  item">
                             <div class="profile-circle"><img src="upload/1504519897.png"></div>
@@ -422,7 +422,7 @@
 
         </div>
     </div>
-</section>
+</section> -->
 <!-- Modal popup window -->
 <div id="myModal" class="modal fade"  data-backdrop="static" data-keyboard="false" role="dialog">
     <div class="modal-dialog">
@@ -526,11 +526,11 @@
     </div>
 </section>
 
-<script src='/js/jquery-3.1.1.min.js'></script>
-<script src='/js/bootstrap.min.js'></script>
-<script src='/js/css3-animate-it.js'></script>
-<script src="/js/thumbnail-slider.js" type="text/javascript"></script>
-<script src="https://www.ektabooks.com/js/sweetalert-dev.js" ></script>
+<script src="{{asset('assets/backend/vendor/js/jquery-3.1.1.min.js')}}"></script>
+<script src="{{asset('assets/backend/vendor/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('assets/backend/vendor/js/css3-animate-it.js')}}"></script>
+<script src="{{asset('assets/backend/vendor/js/thumbnail-slider.js')}}"></script>
+<!-- <script src="{{asset('assets/backend/vendor/https://www.ektabooks.com/js/sweetalert-dev.js')}}" ></script> -->
 
 <script src="/js/modernizr.js"></script>
 <script>
@@ -661,7 +661,7 @@
 
 </script>
 
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="{{asset('assets/backend/vendor/https://code.jquery.com/ui/1.12.1/jquery-ui.js')}}"></script>
 <script>
     $(document).ready(function() {
         $( "#search" ).autocomplete({
@@ -689,11 +689,11 @@
                 while (origEvent.originalEvent !== undefined){
                     origEvent = origEvent.originalEvent;
                 }
-                if (origEvent.type == 'click'){
-                    document.getElementById('search').value = ui.item.value;
-                    document.getElementById('searchForm').submit();
+                if (origEvent.type == "click"){
+                    document.getElementById("search").value = ui.item.value;
+                    document.getElementById("searchForm").submit();
                 } else {
-                    document.getElementById('searchForm').submit();
+                    document.getElementById("searchForm").submit();
                 }
             }
             ,
@@ -705,6 +705,6 @@
 </script>
 </body>
 </html>
-@yield('js')
+@yield("js")
 
 
