@@ -95,9 +95,9 @@
             <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                  data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
+                
+                    <a class="collapse-item" href="{{url('help_user')}}">Help</a>
                     
-                    <a class="collapse-item" href="{{route('backend.contact.show')}}">Help</a>
-                    @csrf
                 </div>
             </div>
         </li>

@@ -119,7 +119,11 @@ Route::middleware('auth')->group(function () {
     Route::get('backend/book/{id}/edit', [BookController::class, 'edit'])->name('backend.book.edit');
     Route::put('backend/book/{id}/update', [BookController::class, 'update'])->name('backend.book.update');
     Route::delete('backend/book/{id}', [BookController::class, 'destroy'])->name('backend.book.destroy');
-    Route::get('backend/help_user/{id}', [ContactController::class, 'show'])->name('backend.contact.show');
+    Route::get('/contact_us', [ContactController::class, 'showContactForm']);
+Route::post('/contact_us', [ContactController::class, 'submitContactForm']);
+/*     Route::get('', [ContactController::class, 'index'])->name('contact_us.index');
+ *//*     Route::get('backend/{id}', [ContactController::class, 'helpUser'])->name('backend.help_user.show');
+ */
 });
 
 route::get('/user/register', function () {
@@ -127,10 +131,11 @@ route::get('/user/register', function () {
 })->name('backend.user.register');
 Route::post('backend/user/register', [UserController::class, 'register'])->name('register.verification');
 
+
 /* Route::post('/upload', 'BookController@store')->name('backend.book.store');
   /*Route::post('/upload', [BookController::class, 'store'])->name('backend.book.store');*/
 
-  Route::get('/contact_us', [ContactController::class, 'showContactForm']);
-Route::post('/contact_us', [ContactController::class, 'submitContactForm']);
+  Route::get('help_user',[ContactController::class,'show']);
+  Route::delete('backend/{id}', [ContactController::class, 'destroy']);
 
 

@@ -35,8 +35,25 @@ class ContactController extends Controller
 
         return redirect()->back()->with('success', 'Thank you for your message. We will get back to you soon!');
     }
-    function show($id){
-        $contact = Contact::findOrFail($id);
-        return view('backend.contact.show',compact('contact'));
-    }
+    
+    /* function index(){
+        $contacts = Contact::orderBy('name')->get();
+        return view('contact_us.index',compact('contacts'));
+    } */
+
+    /* public function helpUser($id)
+    {
+        $helpUser = Contact::findOrFail($id);
+        return view('backend.help_user', compact('helpUser'));
+    } */
+   function show()
+   {
+    $data=Contact::all();
+    return view('backend/help_user',['contacts'=>$data]);
+   }
+   function  destroy($id){
+    $contact = Contact::findOrFail($id);
+    $contact->delete();
+    return redirect()->route('backend/help_user');
+}
 }
