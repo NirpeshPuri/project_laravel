@@ -78,7 +78,7 @@ class UserController extends Controller
             if ($user->isAdmin()) {
                 return redirect()->route("backend.admin.dashboard");
             } elseif ($user->isUser()) {
-                return redirect()->route("backend.user.dashboard");
+                return redirect()->route("user_home");
             }
         } else {
             return redirect()->route('login')->withErrors(['email' => 'User not found']);

@@ -87,7 +87,7 @@ Route::get('/', [FrontendController::class, 'home']);
 Route::get('/about', [FrontendController::class, 'about']);
 Route::get('/contact_us', [FrontendController::class, 'contact_us']);
   /* Route::get('/welcome', [FrontendController::class, 'welcome']);  */
- Route::get('/user_home', [FrontendController::class, 'user_home']);
+
  Route::get('/brances', [FrontendController::class, 'brances']);
 
 
@@ -109,7 +109,7 @@ Route::post('/register', [UserController::class, 'register'])->name('register');
 Route::middleware('auth')->group(function () {
     Route::get('/backend/dashboard', [UserController::class, 'dashboard'])->name('backend.dashboard');
     Route::get('/backend/admin-dashboard', [UserController::class, 'adminDashboard'])->name('backend.admin.dashboard');
-    Route::get('/backend/user-dashboard', [UserController::class, 'userDashboard'])->name('backend.user.dashboard');
+    Route::get('/user_home', [UserController::class, 'userDashboard'])->name('user_home');
 
     // Other authenticated routes
     Route::get('backend/book/create', [BookController::class, 'create'])->name('backend.book.create');
@@ -123,7 +123,10 @@ Route::middleware('auth')->group(function () {
 Route::post('/contact_us', [ContactController::class, 'submitContactForm']);
 /*     Route::get('', [ContactController::class, 'index'])->name('contact_us.index');
  *//*     Route::get('backend/{id}', [ContactController::class, 'helpUser'])->name('backend.help_user.show');
+ 
  */
+
+ Route::get('/user_home', [BookController::class, 'userHome'])->name('user_home');
 });
 
 route::get('/user/register', function () {
@@ -137,5 +140,11 @@ Route::post('backend/user/register', [UserController::class, 'register'])->name(
 
   Route::get('help_user',[ContactController::class,'show']);
   Route::delete('backend/{id}', [ContactController::class, 'destroy']);
+
+  Route::get('/test', [BookController::class, 'showBooks'])->name('test');
+
+  
+
+
 
 

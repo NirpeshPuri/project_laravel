@@ -71,4 +71,20 @@ class BookController extends Controller
         }
         return redirect()->route('backend.book.index');
     }
+
+    public function showBooks()
+{
+    $books = Book::all();
+    return view('test', compact('books'));
+}
+
+// Example controller method in your BooksController or HomeController
+public function userHome()
+{
+    // Fetch books from the database
+    $books = Book::all(); // or use any other logic to get the books
+   
+   return view('user_home', compact('books'));
+}
+
 }

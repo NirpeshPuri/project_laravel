@@ -28,5 +28,11 @@ class FrontendController extends Controller
         return view('brances');
     } 
     
+    public function userHome()
+    {
+        $books = Book::all();
+        return view('user_home', compact('books'));
+    }
+    
     
 }

@@ -47,7 +47,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-3">
-                <div class="img"><a href="{{route('backend.user.dashboard')}}"><img src="{{asset('/assets/images/logo.png')}}" style="width: 150px"/></a></div>
+                <div class="img"><a href="{{route('user_home')}}"><img src="{{asset('/assets/images/logo.png')}}" style="width: 150px"/></a></div>
             </div>
             <div class="col-md-8 col-sm-8 tb20p left">
                 <div class="input-group" id="adv-ssearch">
@@ -204,7 +204,7 @@
                             </ul>
 
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="{{route('backend.user.dashboard')}}">HOME</a></li>
+                                <li><a href="{{route('user_home')}}">HOME</a></li>
                                 <li><a href="{{url('about')}}">About Us</a></li>
 
                                 <li><a href="{{url('contact_us')}}">CONTACT US</a></li>
@@ -229,45 +229,7 @@
         </div>
     </div>
 </section>
-<section class="quick-nav">
-    <div class="container">
-        <div class="row">
 
-            <div class="col-md-3 col-sm-6">
-                <div class="comndiv">
-                    <a href="{{url('contact_us')}}"><div class="iconcircle"><i class="fas fa-phone-volume" style="padding-top:24px;"></i></div></a>
-
-                    <span class="circleinfo">
-						<a href="{{url('contact_us')}}"><h3>Inquiry</h3></a>
-						Inquiry
-
-					</span>
-
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6">
-                <div class="comndiv">
-                    <a href="{{url('contact_us')}}"><div class="iconcircle"><i class="fa-solid fa-user" style="padding-top:24px;"></i></div></a>
-                    <span class="circleinfo">
-						<a href="{{url('contact_us')}}"><h3>Customer Care</h3></a>
-						Help and Feedback
-					</span>
-                </div>
-            </div>
-            
-            <div class="col-md-3 col-sm-6">
-                <div class="comndiv">
-                    <a href="{{url('brances')}}"><div class="iconcircle"><i class="fas fa-code-branch" style="padding-top:24px;"></i></div></a>
-                    <span class="circleinfo">
-						<a href="{{url('brances')}}"><h3>Nirpesh Branches</h3></a>
-						Branch Offices
-					</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 @yield('content')
 <!-- <section>
     <div class="container">
@@ -475,7 +437,45 @@
      logged_out_greeting="Namaste, How can we help you?">
 </div>
 
+<section class="quick-nav">
+    <div class="container">
+        <div class="row">
 
+            <div class="col-md-3 col-sm-6">
+                <div class="comndiv">
+                    <a href="{{url('contact_us')}}"><div class="iconcircle"><i class="fas fa-phone-volume" style="padding-top:24px;"></i></div></a>
+
+                    <span class="circleinfo">
+						<a href="{{url('contact_us')}}"><h3>Inquiry</h3></a>
+						Inquiry
+
+					</span>
+
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="comndiv">
+                    <a href="{{url('contact_us')}}"><div class="iconcircle"><i class="fa-solid fa-user" style="padding-top:24px;"></i></div></a>
+                    <span class="circleinfo">
+						<a href="{{url('contact_us')}}"><h3>Customer Care</h3></a>
+						Help and Feedback
+					</span>
+                </div>
+            </div>
+            
+            <div class="col-md-3 col-sm-6">
+                <div class="comndiv">
+                    <a href="{{url('brances')}}"><div class="iconcircle"><i class="fas fa-code-branch" style="padding-top:24px;"></i></div></a>
+                    <span class="circleinfo">
+						<a href="{{url('brances')}}"><h3>Nirpesh Branches</h3></a>
+						Branch Offices
+					</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 <footer class="tb40p">
@@ -484,7 +484,7 @@
             <div class="col-md-6">
                 <div class="whitebgclr">
 						<span class="picofdwik">
-							<img src="/images/pickofdwik.jpg">
+							<img src="{{asset('/assets/images/logo.png')}} " height='280px' width='600px'>
 						</span>
                     <div id="dg-container" class="dg-container container">
                         <div class="dg-wrapper tb40m">

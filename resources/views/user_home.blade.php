@@ -1,7 +1,8 @@
 @extends('layouts.frontend_master')
 @section('title','Dashboard')
 @section('content')
-<section class="publications">
+
+<!-- <section class="publications">
     <div class="container">
         <h2 class="h2"><a href="https://www.ektabooks.com/show/ekta_publications">Nirpesh Publications</a>
             <div class="title_underline"></div>
@@ -38,7 +39,111 @@
             </div>
         </div>
     </div>
+</section> -->
+
+
+<!-- resources/views/test.blade.php -->
+@php
+    $books = $books ?? collect(); // Ensure $books is always a collection
+@endphp
+
+
+<section class="main-content">
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar Content -->
+          
+            <!-- //Sidebar End -->
+            <div class="col-md-8">
+                <div class="content-area">
+                    <div class="card my-4">
+                        <div class="card-header bg-dark">
+                            <br><br>
+                            <h1><b>Books</b></h1>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                
+                            @if($books->count())
+    @foreach($books as $book)
+        <div class="col-lg-3 col-6">
+            <div class="book-wrap">
+                <div class="book-image mb-2">
+                    <a href="{{ route('backend.book.show', $book->id) }}">
+                        <img src="{{ asset('assets/images/book/' . $book->file_photo) }}" alt="{{ $book->name }}" height="150px">
+                    </a>
+                </div>
+                <div class="book-title mb-2">
+                    <a href="{{ route('backend.book.show', $book->id) }}">{{ Str::limit($book->name, 30) }}</a>
+                </div>
+                <div class="book-author mb-2">
+                    <small>By {{ $book->author_name }}</small>
+                </div>
+                <div class="book-price mb-3">
+                    <span><strong>Nrs {{ $book->price }} </strong></span>
+                </div >
+                <div class="book-price mb-4">
+                    <span>Available:</span>
+                @include('backend.book.check_passout_status',['available_status' => $book->available_status])
+                </div>
+                
+                <button class="btn btn-primary" onclick="showDetails({{ $book->id }})">Show Details</button>
+                <div id="book-details-{{ $book->id }}" class="book-details" style="display: none;">
+                    <p>{{ $book->author_bio }}</p>
+                    <p>{{ $book->description }}</p>
+                </div>
+            </div>
+        </div>
+    @endforeach
+@else
+    <div class="alert alert-warning">No books available</div>
+@endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/owl.carousel/2.3.4/owl.carousel.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#thumbnail-slider').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 2
+                },
+                600: {
+                    items: 4
+                },
+                1000: {
+                    items: 6
+                }
+            }
+        });
+    });
+    </script>
+<script>
+    
+function showDetails(bookId) {
+    var detailsDiv = document.getElementById('book-details-' + bookId);
+    if (detailsDiv.style.display === 'none') {
+        detailsDiv.style.display = 'block';
+    } else {
+        detailsDiv.style.display = 'none';
+    }
+}
+</script>
+
+
+
+
 <section>
     <div class="container">
         <h2 class="h2"><a href="https://www.ektabooks.com/new-arrivals">New Arrivals</a>
@@ -58,19 +163,19 @@
                         <ul>
                             <li>
 
-                                <a href="https://www.ektabooks.com/bookdetails/6266"><img class="thumb" src="/images/books/thumb-f0sFEc91jNNgc760ZIvL.jpg" alt=""></a>
+                                <a href="https://www.ektabooks.com/bookdetails/6266"><img class="thumb" src="{{asset('/assets/images/logo.png')}}" alt=""></a>
                             </li>
                             <li>
 
-                                <a href="https://www.ektabooks.com/bookdetails/6316"><img class="thumb" src="/images/books/thumb-nuGUTYzVfcahJkqkMeoY.jpg" alt=""></a>
+                                <a href="https://www.ektabooks.com/bookdetails/6316"><img class="thumb" src="{{asset('/assets/images/logo.png')}}" alt=""></a>
                             </li>
                             <li>
 
-                                <a href="https://www.ektabooks.com/bookdetails/6149"><img class="thumb" src="/images/books/thumb-2EHEZIZKHI6tBxkDI0Nc.jpg" alt=""></a>
+                                <a href="https://www.ektabooks.com/bookdetails/6149"><img class="thumb" src="{{asset('/assets/images/logo.png')}}" alt=""></a>
                             </li>
                             <li>
 
-                                <a href="https://www.ektabooks.com/bookdetails/6377"><img class="thumb" src="/images/books/thumb-ZsM3Sve8Gum8z4fMT2uj.jpg" alt=""></a>
+                                <a href="https://www.ektabooks.com/bookdetails/6377"><img class="thumb" src="{{asset('/assets/images/logo.png')}}" alt=""></a>
                             </li>
                             <li>
 
