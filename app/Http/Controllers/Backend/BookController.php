@@ -87,4 +87,9 @@ public function userHome()
    return view('user_home', compact('books'));
 }
 
+function showBook($id){
+    $book = Book::findOrFail($id);
+    return view('show_book_detail',compact('book'));
+}
+
 }

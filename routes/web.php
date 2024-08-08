@@ -127,6 +127,7 @@ Route::post('/contact_us', [ContactController::class, 'submitContactForm']);
  */
 
  Route::get('/user_home', [BookController::class, 'userHome'])->name('user_home');
+ Route::get('/{id}', [BookController::class, 'showBook'])->name('show_book_detail');
 });
 
 route::get('/user/register', function () {

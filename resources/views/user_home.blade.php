@@ -87,10 +87,13 @@
                 @include('backend.book.check_passout_status',['available_status' => $book->available_status])
                 </div>
                 
-                <button class="btn btn-primary" onclick="showDetails({{ $book->id }})">Show Details</button>
+                <!-- <button class="btn btn-primary" onclick="showDetails({{ $book->id }})">Show Details</button>
                 <div id="book-details-{{ $book->id }}" class="book-details" style="display: none;">
                     <p>{{ $book->author_bio }}</p>
                     <p>{{ $book->description }}</p>
+                </div> -->
+                <div>
+                <a href="{{route('show_book_detail',$book->id)}}" class="btn btn-primary">View</a>
                 </div>
             </div>
         </div>
