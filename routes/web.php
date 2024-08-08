@@ -82,10 +82,14 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Backend\BookController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\RequestController;
 
-Route::get('/', [FrontendController::class, 'home']);
+Route::get('/backend/book/book_request', [RequestController::class,'showRequest'])->name('book_request');
+
+//Route::get('/', [FrontendController::class, 'home']);
 Route::get('/about', [FrontendController::class, 'about']);
 Route::get('/contact_us', [FrontendController::class, 'contact_us']);
+
   /* Route::get('/welcome', [FrontendController::class, 'welcome']);  */
 
  Route::get('/brances', [FrontendController::class, 'brances']);
@@ -121,6 +125,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('backend/book/{id}', [BookController::class, 'destroy'])->name('backend.book.destroy');
     Route::get('/contact_us', [ContactController::class, 'showContactForm']);
 Route::post('/contact_us', [ContactController::class, 'submitContactForm']);
+Route::get('backend/help_user',[ContactController::class,'show'])->name('help_user');
+  Route::delete('backend/help_user/{id}', [ContactController::class, 'destroy']);
+
+/* Route::get('backend/help_user',[ContactController::class,'show']);
+  Route::delete('backend/{id}', [ContactController::class, 'destroy']); */
 /*     Route::get('', [ContactController::class, 'index'])->name('contact_us.index');
  *//*     Route::get('backend/{id}', [ContactController::class, 'helpUser'])->name('backend.help_user.show');
  
@@ -128,7 +137,16 @@ Route::post('/contact_us', [ContactController::class, 'submitContactForm']);
 
  Route::get('/user_home', [BookController::class, 'userHome'])->name('user_home');
  Route::get('/{id}', [BookController::class, 'showBook'])->name('show_book_detail');
+ Route::post('/{id}', [RequestController::class, 'store'])->name('frontend.book.request');
+
+ Route::patch('/admin/book-request/{id}/approve', [RequestController::class, 'approve'])->name('admin.book_request.approve');
+Route::delete('/admin/book-request/{id}/decline', [RequestController::class, 'decline'])->name('admin.book_request.decline');
+
 });
+
+
+//Route::get('/backend/book/book_request',[RequestController::class,'showRequest'])->name('book_request');
+
 
 route::get('/user/register', function () {
     return view('user.register');
@@ -136,13 +154,16 @@ route::get('/user/register', function () {
 Route::post('backend/user/register', [UserController::class, 'register'])->name('register.verification');
 
 
+
+
 /* Route::post('/upload', 'BookController@store')->name('backend.book.store');
   /*Route::post('/upload', [BookController::class, 'store'])->name('backend.book.store');*/
 
-  Route::get('help_user',[ContactController::class,'show']);
-  Route::delete('backend/{id}', [ContactController::class, 'destroy']);
+  
+ 
 
-  Route::get('/test', [BookController::class, 'showBooks'])->name('test');
+
+
 
   
 

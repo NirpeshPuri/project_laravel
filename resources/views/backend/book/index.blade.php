@@ -2,7 +2,7 @@
 @section('title','List Of Book')
 @section('content')
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Book Management</h1>
+    <h1 class="h3 mb-4 text-gray-800">Book Management <a class="collapse-item" href="{{route('backend.book.create')}}" style="border-left: solid 50px white;" ><b>Create Book</b></a></h1>
     <div  class="row">
         <div class="col-12">
             <div class="card mb-4">

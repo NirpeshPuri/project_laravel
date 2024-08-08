@@ -22,7 +22,6 @@ class ContactController extends Controller
             'phone' => 'required|regex:/^[0-9]{10}$/',
         ]);
 
-        // Create a new contact record
         Contact::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -48,12 +47,13 @@ class ContactController extends Controller
     } */
    function show()
    {
+    
     $data=Contact::all();
     return view('backend/help_user',['contacts'=>$data]);
    }
-   function  destroy($id){
+   public function  destroy($id){
     $contact = Contact::findOrFail($id);
     $contact->delete();
-    return redirect()->route('backend/help_user');
+    return redirect()->route('help_user',$contact->id)->with('success', 'Contact deleted successfully.');
 }
 }

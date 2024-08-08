@@ -31,9 +31,9 @@
                                 <td>{{$contact->message}}</td>
                         <td>
                         <form style="display: inline-block" method="post" action="{{url('backend/help_user',$contact->id)}}">
-                                        @csrf
-                                        <input type="hidden" name="_method" value="DELETE"/>
-                                        <input type="submit" value="Delete" class="btn btn-danger">
+                        @csrf
+                        <input type="hidden" name="_method" value="DELETE"/>
+                        <input type="submit" value="Delete" class="btn btn-danger">
                                     </form>
                         </td>
                             </tr>

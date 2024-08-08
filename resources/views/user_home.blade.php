@@ -69,12 +69,12 @@
         <div class="col-lg-3 col-6">
             <div class="book-wrap">
                 <div class="book-image mb-2">
-                    <a href="{{ route('backend.book.show', $book->id) }}">
+                    <a href="{{ route('show_book_detail', $book->id) }}">
                         <img src="{{ asset('assets/images/book/' . $book->file_photo) }}" alt="{{ $book->name }}" height="150px">
                     </a>
                 </div>
                 <div class="book-title mb-2">
-                    <a href="{{ route('backend.book.show', $book->id) }}">{{ Str::limit($book->name, 30) }}</a>
+                    <a href="{{ route('show_book_detail', $book->id) }}">{{ Str::limit($book->name, 30) }}</a>
                 </div>
                 <div class="book-author mb-2">
                     <small>By {{ $book->author_name }}</small>

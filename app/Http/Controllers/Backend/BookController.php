@@ -38,7 +38,6 @@ class BookController extends Controller
 
     function index(){
         $books = Book::orderBy('name')->get();
-        //send data from controller to view
         return view('backend.book.index',compact('books'));
     }
 
@@ -47,11 +46,14 @@ class BookController extends Controller
         return view('backend.book.show',compact('book'));
     }
 
-    function  destroy($id){
+    public function destroy($id) {
         $book = Book::findOrFail($id);
         $book->delete();
-        return redirect()->route('backend.book.index');
+        
+        // Flash success message to the session
+        return redirect()->route('backend.book.index')->with('success', 'Book deleted successfully.');
     }
+    
 
     function edit($id){
         $book = Book::findOrFail($id);
@@ -78,11 +80,10 @@ class BookController extends Controller
     return view('test', compact('books'));
 }
 
-// Example controller method in your BooksController or HomeController
 public function userHome()
 {
-    // Fetch books from the database
-    $books = Book::all(); // or use any other logic to get the books
+    
+    $books = Book::all(); 
    
    return view('user_home', compact('books'));
 }
@@ -91,5 +92,6 @@ function showBook($id){
     $book = Book::findOrFail($id);
     return view('show_book_detail',compact('book'));
 }
+
 
 }

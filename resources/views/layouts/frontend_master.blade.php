@@ -50,7 +50,7 @@
                 <div class="img"><a href="{{route('user_home')}}"><img src="{{asset('/assets/images/logo.png')}}" style="width: 150px"/></a></div>
             </div>
             <div class="col-md-8 col-sm-8 tb20p left">
-                <div class="input-group" id="adv-ssearch">
+                <!-- <div class="input-group" id="adv-ssearch">
                     <div class="input-group-btn" style="display:none">
                         <div class="btn-group" role="group">
                             <div class="dropdown dropdown-lg">
@@ -79,7 +79,8 @@
                             <input type="submit" value="search" class="btn srchicn">
                         </div>
                     </form>
-                </div>
+                </div> -->
+                <h1>Welcome to our Book Store</h1>
             </div>
 
 
@@ -113,92 +114,7 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CATAGORIES <i class="fa fa-navicon"></i></a>
-
-                                    <div class="categorydropmenu">
-
-                                        <ul class="dropdown-menu">
-                                            <div class="row">
-
-                                                <div class="submenuDiv col-md-2 col-sm-2">
-                                                    <li>
-                                                        <ul>
-                                                            <li><a href="https://www.ektabooks.com/show?category=biography&sub_category=english biography">Biography</a></li>
-
-                                                            <li><a href="https://www.ektabooks.com/show?category=business/management&sub_category=business management">Business/Management</a></li>
-
-                                                            <li><a href="https://www.ektabooks.com/show?category=children literature&sub_category=teen / young adult fiction">Children Literature</a></li>
-
-                                                        </ul>
-                                                    </li>
-                                                </div>
-
-                                                <div class="submenuDiv col-md-2 col-sm-2">
-                                                    <li>
-                                                        <ul>
-                                                            <li><a href="https://www.ektabooks.com/show?category=dictionary and thesaurus&sub_category=english dictionary">Dictionary and Thesaurus</a></li>
-
-                                                            <li><a href="https://www.ektabooks.com/show?category=fiction&sub_category=english fiction">Fiction</a></li>
-
-                                                            <li><a href="https://www.ektabooks.com/show?category=history&sub_category=history books">History</a></li>
-
-                                                        </ul>
-                                                    </li>
-                                                </div>
-
-                                                <div class="submenuDiv col-md-2 col-sm-2">
-                                                    <li>
-                                                        <ul>
-                                                            <li><a href="https://www.ektabooks.com/show?category=politics&sub_category=political books">Politics</a></li>
-
-                                                            <li><a href="https://www.ektabooks.com/show?category=religion&sub_category=buddhism">Religion</a></li>
-
-                                                            <li><a href="https://www.ektabooks.com/show?category=self help&sub_category=self help books">Self Help</a></li>
-
-                                                        </ul>
-                                                    </li>
-                                                </div>
-
-                                                <div class="submenuDiv col-md-2 col-sm-2">
-                                                    <li>
-                                                        <ul>
-                                                            <li><a href="https://www.ektabooks.com/show/book_list/78">Academics</a></li>
-                                                            <li><a href="https://www.ektabooks.com/show?category=more categories&sub_category=agriculture">More Categories</a></li>
-
-                                                            <li><a href="https://www.ektabooks.com/show?category=health&sub_category=general health">Health</a></li>
-
-                                                        </ul>
-                                                    </li>
-                                                </div>
-
-                                                <div class="submenuDiv col-md-2 col-sm-2">
-                                                    <li>
-                                                        <ul>
-                                                            <li><a href="https://www.ektabooks.com/show?category=ekta publications&sub_category=children literatures">Ekta Publications</a></li>
-
-                                                            <li><a href="https://www.ektabooks.com/show?category=non-fiction&sub_category=english">Non-Fiction</a></li>
-
-                                                            <li><a href="https://www.ektabooks.com/show?category=poetry&sub_category=poetry books">Poetry</a></li>
-
-                                                        </ul>
-                                                    </li>
-                                                </div>
-
-                                                <div class="submenuDiv col-md-2 col-sm-2">
-                                                    <li>
-                                                        <ul>
-                                                            <li><a href="https://www.ektabooks.com/show?category=comics &sub_category=manga ">Comics </a></li>
-
-                                                            <li><a href="https://www.ektabooks.com/show?category=textbooks&sub_category=english grammar">Textbooks</a></li>
-
-                                                        </ul>
-                                                    </li>
-                                                </div>
-
-
-                                            </div>
-                                        </ul></li>
+                              
 
 
                             </ul>
